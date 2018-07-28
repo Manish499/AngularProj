@@ -1,0 +1,15 @@
+
+<form>
+  <div class="container">
+    <h1>Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" [(ngModel)] = "userEnter.email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" [(ngModel)] = "userEnter.password" required>
+
+    <hr>
+    <button type="submit" class="registerbtn" (click) = "onSubmit($event)">Login</button>
+  </div>
+</form>
