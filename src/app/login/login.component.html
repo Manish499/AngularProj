@@ -1,5 +1,5 @@
 
-<form>
+<form (ngSubmit)="onSubmit()">
   <div class="container">
     <h1>Login</h1>
 
@@ -10,6 +10,6 @@
     <input type="password" placeholder="Enter Password" name="psw" [(ngModel)] = "userEnter.password" required>
 
     <hr>
-    <button type="submit" class="registerbtn" (click) = "onSubmit($event)">Login</button>
+    <button type="submit" class="registerbtn" [disabled]="validateForm()">Login</button>
   </div>
 </form>

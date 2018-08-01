@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserType } from '../user-type';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  user: {email:'', password:''};
+  userInfo: UserType;
   constructor() {
-    this.user = JSON.parse(localStorage.getItem('userInfo'));
+    this.userInfo = new UserType();
+    this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
    }
 

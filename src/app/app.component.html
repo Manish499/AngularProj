@@ -1,4 +1,6 @@
-<a routerLink="/">Register</a>&nbsp;
-<a routerLink="/app-login">Login</a>
+<a *ngIf="!isUserLoggedIn" routerLink="/">Register</a>&nbsp;
+<a *ngIf="!isUserLoggedIn" routerLink="/app-login">Login</a>&nbsp;
+<a *ngIf="isUserLoggedIn" (click)="removeUser()" routerLink="/">Delete User</a>&nbsp;
+<a *ngIf="isUserLoggedIn" routerLink="/app-login" (click)="userLogout()">LogOut</a>
 
 <router-outlet></router-outlet>

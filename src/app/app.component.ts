@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,7 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  constructor(){
+  isUserLoggedIn: boolean;
+  constructor(private router: Router){
+    this.isUserLoggedIn = false;
+    if(localStorage.getItem('userInfo') && !(this.router.url == "/")){
+      this.isUserLoggedIn = true;
+    }
+  }
+
+  removeUser(){
+    localStorage.removeItem("userInfo");
+    this.router.navigate(['/']);
+  }
+
+  userLogout(){
+    this.isUserLoggedIn = false;
   }
 }
